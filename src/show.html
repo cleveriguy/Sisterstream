@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SisterStream - Show</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="show">
+  <header class="app-header">
+    <div class="logo-group clickable" id="homeLink">
+      <img src="assets/logo.svg" alt="SisterStream logo" class="logo" />
+      <h1>SisterStream</h1>
+    </div>
+    <div class="header-actions">
+      <button id="themeToggle" class="pill">🌙 Dark</button>
+    </div>
+  </header>
+  <main id="content" class="show-layout">
+    <div id="showBanner" class="show-banner">
+      <div class="banner-overlay">
+        <h2 id="showTitle"></h2>
+      </div>
+    </div>
+    <section class="row">
+      <div class="row-header"><h2>Seasons</h2></div>
+      <div class="card-row" id="seasonGrid"></div>
+    </section>
+  </main>
+
+  <div id="overlay"></div>
+  <script src="renderer.js"></script>
+</body>
+</html>
