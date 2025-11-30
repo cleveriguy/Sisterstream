@@ -112,7 +112,7 @@ function createCard(media, onClick) {
   card.className = 'card';
   card.addEventListener('click', onClick);
   const img = document.createElement('img');
-  img.src = encodeURI(`file://${media.cover}`);
+  img.src = window.sisterStreamAPI.toFileUrl(media.cover);
   img.alt = media.title || media.name;
   card.appendChild(img);
   const body = document.createElement('div');
@@ -230,7 +230,7 @@ function bindSearch(mediaIndex) {
         row.addEventListener('click', () => group.handler(item));
         const thumb = document.createElement('img');
         const coverPath = item.cover || item.banner;
-        thumb.src = coverPath ? encodeURI(`file://${coverPath}`) : DEFAULT_COVER;
+        thumb.src = coverPath ? window.sisterStreamAPI.toFileUrl(coverPath) : DEFAULT_COVER;
         thumb.alt = item.title || item.name;
         thumb.width = 40;
         thumb.height = 40;
@@ -258,7 +258,7 @@ function renderShowPage() {
   const banner = document.getElementById('showBanner');
   const title = document.getElementById('showTitle');
   if (banner && title) {
-    banner.style.backgroundImage = `url(${encodeURI(`file://${show.cover}`)})`;
+    banner.style.backgroundImage = `url(${window.sisterStreamAPI.toFileUrl(show.cover)})`;
     title.textContent = show.name;
   }
 
@@ -301,7 +301,7 @@ function renderSeasonPage() {
       card.className = 'episode-card';
       card.addEventListener('click', () => openVideo(episode));
       const img = document.createElement('img');
-      img.src = encodeURI(`file://${episode.cover}`);
+      img.src = window.sisterStreamAPI.toFileUrl(episode.cover);
       img.alt = episode.title;
       const details = document.createElement('div');
       details.className = 'episode-details';
@@ -358,7 +358,7 @@ function openVideo(media) {
   videoWrapper.className = 'overlay-video';
   const video = document.createElement('video');
   video.controls = true;
-  video.src = encodeURI(`file://${media.filePath}`);
+  video.src = window.sisterStreamAPI.toFileUrl(media.filePath);
   videoWrapper.appendChild(video);
 
   panel.appendChild(header);
