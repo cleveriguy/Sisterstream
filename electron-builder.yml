@@ -1,0 +1,26 @@
+appId: com.sisterstream.app
+productName: SisterStream
+directories:
+  output: dist
+  buildResources: icons
+files:
+  - '!movies/**'
+  - '!dist/**'
+  - '!.git/**'
+  - '!.cache/**'
+  - '!node_modules/.cache/**'
+  - '!**/*.log'
+  - '!**/Thumbs.db'
+  - '!**/.DS_Store'
+  - '**/*'
+extraResources:
+  - from: movies
+    to: movies
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+  icon: icon.ico
+portable:
+  artifactName: SisterStream.exe

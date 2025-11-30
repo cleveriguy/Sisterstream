@@ -1,0 +1,17 @@
+{
+  "name": "sisterstream",
+  "version": "1.0.0",
+  "description": "Portable offline Netflix-style player for local movies and TV shows.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "node scripts/materialize-icon.js && electron-builder --win portable"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.2.1",
+    "electron-builder": "^24.13.3"
+  }
+}

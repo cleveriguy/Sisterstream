@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SisterStream - Season</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="season">
+  <header class="app-header">
+    <div class="logo-group clickable" id="homeLink">
+      <img src="assets/logo.svg" alt="SisterStream logo" class="logo" />
+      <h1>SisterStream</h1>
+    </div>
+    <div class="header-actions">
+      <button id="themeToggle" class="pill">🌙 Dark</button>
+    </div>
+  </header>
+  <main id="content" class="season-layout">
+    <div class="season-header">
+      <div class="season-info">
+        <p id="seasonBreadcrumb"></p>
+        <h2 id="seasonTitle"></h2>
+      </div>
+    </div>
+    <section class="episode-list" id="episodeList"></section>
+  </main>
+
+  <div id="overlay"></div>
+  <script src="renderer.js"></script>
+</body>
+</html>

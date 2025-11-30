@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.dist
+/dist
+/icons/icon.ico
+sisterstream-data.json
+.DS_Store
+Thumbs.db

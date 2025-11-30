@@ -1,0 +1,366 @@
+:root {
+  --bg: #0f0f0f;
+  --bg-alt: #161616;
+  --text: #f5f5f5;
+  --muted: #b3b3b3;
+  --accent: #e50914;
+  --card: #1f1f1f;
+  --overlay: rgba(0, 0, 0, 0.8);
+}
+
+body.light {
+  --bg: #f5f5f5;
+  --bg-alt: #ffffff;
+  --text: #0f0f0f;
+  --muted: #333333;
+  --card: #e9e9e9;
+  --overlay: rgba(255, 255, 255, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--bg-alt);
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-container {
+  position: relative;
+}
+
+#searchInput {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: var(--card);
+  color: var(--text);
+  width: 260px;
+}
+
+.search-results {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px;
+  display: none;
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 30;
+}
+
+.search-results.active {
+  display: block;
+}
+
+.search-group {
+  margin-bottom: 10px;
+}
+
+.search-group h4 {
+  margin: 6px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.search-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pill {
+  border: 1px solid #333;
+  background: var(--card);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+main {
+  padding: 24px;
+}
+
+.row {
+  margin-bottom: 28px;
+}
+
+.row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 220px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.card .card-body {
+  padding: 10px 12px 14px;
+}
+
+.card .title {
+  margin: 0;
+  font-size: 15px;
+}
+
+.card .subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.progress .bar {
+  height: 100%;
+  background: var(--accent);
+  width: 0;
+}
+
+.show-layout .show-banner {
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid #222;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 30%, transparent 70%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.banner-overlay h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.season-layout .season-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 14px;
+}
+
+.season-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.season-info h2 {
+  margin: 6px 0 0;
+}
+
+.episode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.episode-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #1e1e1e;
+}
+
+.episode-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.episode-details {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.episode-details h4 {
+  margin: 0;
+}
+
+.episode-details p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.overlay-panel {
+  width: 90%;
+  height: 90%;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+}
+
+.overlay-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.overlay-video {
+  flex: 1;
+  background: #000;
+}
+
+.overlay-video video {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.resume-popup, .next-popup {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.resume-popup button,
+.next-popup button {
+  background: var(--accent);
+  border: none;
+  padding: 8px 12px;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-left: 8px;
+}
+
+.empty-state {
+  color: var(--muted);
+  font-style: italic;
+  padding: 8px 0;
+}

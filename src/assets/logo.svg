@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" role="img" aria-labelledby="title desc">
+  <title id="title">SisterStream wordmark</title>
+  <desc id="desc">Text-based SisterStream logo placeholder</desc>
+  <rect width="320" height="80" rx="10" fill="#0f0f0f" />
+  <text x="26" y="52" fill="#e5e7eb" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="42" font-weight="700">Sister</text>
+  <text x="168" y="52" fill="#e50914" font-family="'Segoe UI', 'Inter', system-ui, sans-serif" font-size="42" font-weight="700">Stream</text>
+</svg>

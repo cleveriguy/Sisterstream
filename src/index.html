@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SisterStream</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <header class="app-header">
+    <div class="logo-group">
+      <img src="assets/logo.svg" alt="SisterStream logo" class="logo" />
+      <h1>SisterStream</h1>
+    </div>
+    <div class="header-actions">
+      <div class="search-container">
+        <input type="search" id="searchInput" placeholder="Search movies, shows, episodes" aria-label="Search" />
+        <div id="searchResults" class="search-results"></div>
+      </div>
+      <button id="themeToggle" class="pill">🌙 Dark</button>
+    </div>
+  </header>
+  <main id="content">
+    <section id="continueSection" class="row">
+      <div class="row-header"><h2>Continue Watching</h2></div>
+      <div class="card-row" id="continueGrid"></div>
+    </section>
+    <section id="recentSection" class="row">
+      <div class="row-header"><h2>Recently Watched</h2></div>
+      <div class="card-row" id="recentGrid"></div>
+    </section>
+    <section class="row">
+      <div class="row-header"><h2>Movies</h2></div>
+      <div class="card-row" id="moviesGrid"></div>
+    </section>
+    <section class="row">
+      <div class="row-header"><h2>TV Shows</h2></div>
+      <div class="card-row" id="showsGrid"></div>
+    </section>
+  </main>
+
+  <div id="overlay"></div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
