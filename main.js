@@ -5,7 +5,7 @@ const fs = require('fs');
 const VIDEO_EXTENSIONS = new Set(['.mp4', '.mkv', '.webm']);
 const IMAGE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.svg']);
 
-const getBaseDir = () => (app.isPackaged ? path.join(process.resourcesPath, '..') : __dirname);
+const getBaseDir = () => (app.isPackaged ? process.resourcesPath : __dirname);
 const moviesDir = path.join(getBaseDir(), 'movies');
 const dataPath = path.join(getBaseDir(), 'sisterstream-data.json');
 
